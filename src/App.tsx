@@ -1,35 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import logo from "./assets/images/logo.svg";
+import illustration from "./assets/images/illustration-devices.svg";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <main>
+      <header>
+        <picture>
+          <img src={logo} alt="" />
+        </picture>
+        <nav>
+          <ul>
+            <li>
+              <a href="">Product</a>
+            </li>
+            <li>
+              <a href="">Features</a>
+            </li>
+            <li>
+              <a href="">Pricing</a>
+            </li>
+
+            <li>
+              <a href="">Login</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <section className="main-section">
+        <picture>
+          <img src={illustration} alt="" />
+        </picture>
+        <div>
+          <div>
+            <span>New</span>
+            <span>Monograph Dashboard</span>
+          </div>
+          <h1>Powerful insights into your team</h1>
+          <p>Project planning and time tracking for agile teams</p>
+          <div>
+            <button>Schedule a demo</button>
+            <span>to see a live preview</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
 }
 
-export default App
+export default App;

@@ -50,17 +50,21 @@ const Menu = () => {
       >
         <ul aria-label="Primary" role="list">
           <li>
-            <a href="">Product</a>
+            <a href="#">Product</a>
           </li>
           <li>
-            <a href="">Features</a>
+            <a href="#">Features</a>
           </li>
           <li>
-            <a href="">Pricing</a>
+            <a href="#">Pricing</a>
           </li>
-
           <li>
-            <a href="">Login</a>
+            <div className="box"></div>
+          </li>
+          <li>
+            <a href="#" className="login">
+              Login
+            </a>
           </li>
         </ul>
       </nav>

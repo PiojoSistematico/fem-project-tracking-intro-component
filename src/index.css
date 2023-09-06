@@ -38,7 +38,7 @@
   --font-size-primary-heading: var(--font-size-1000);
   --font-size-secondary-heading: var(--font-size-800);
   --font-size-nav: var(--font-size-500);
-  --font-size-button: var(--font-size-400);
+  --font-size-button: var(--font-size-300);
 
   /* Padding, margin, gap, etc. */
   --size-050: 0.1rem;
@@ -51,7 +51,10 @@
   --size-700: 3rem;
   --size-800: 4rem;
   --size-900: 5rem;
-  --size-1000: 7.5rem;
+  --size-1000: 6rem;
+  --size-1500: 8rem;
+  --size-2000: 10rem;
+  --size-3000: 12rem;
 }
 
 /* Reset */
@@ -148,13 +151,38 @@ body {
   display: none;
 }
 
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--size-1500);
+  overflow: hidden;
+  height: 100vh;
+}
+
+.shadow {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  /* transform: translate(0%, 0%); */
+  background-color: var(--clr-neutral-light-grayish-blue);
+  width: 2000px;
+  height: 2000px;
+  border-radius: 100px;
+}
+
 header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: var(--size-600);
 }
 
+/* Menu */
 .btn-menu {
   background-color: transparent;
   border: none;
@@ -166,38 +194,77 @@ header {
   justify-content: center;
 }
 
-a {
-  text-decoration: none;
-  color: var(--clr-neutral-dark-grayish-blue);
+.menu-open {
+  display: flex;
+  position: absolute;
+  top: 8rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: var(--size-400) var(--size-400);
+  background: var(--clr-neutral-white);
+  /* height: max-content; */
+  width: 20rem;
+  z-index: 2;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0rem 0.5rem 0.1rem var(--clr-neutral-grayish-blue);
 }
 
-a:hover,
-a:focus-visible {
+.menu-open ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  gap: var(--size-400);
+  padding-bottom: var(--size-400);
+  width: 100%;
+}
+
+li {
+  text-align: center;
+}
+
+li a {
+  text-decoration: none;
+  color: var(--clr-neutral-very-dark-blue);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-nav);
+  width: 100%;
+}
+
+li a:hover,
+li a:focus-visible {
   color: var(--clr-primary-soft-red);
 }
 
-main {
-  display: flex;
-  flex-direction: column;
+.login {
+  color: var(--clr-neutral-grayish-blue);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-nav);
+  width: 100%;
+  text-align: center;
+  padding-top: var(--size-400);
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 picture {
   overflow: hidden;
   position: relative;
-  width: 500px;
-  height: 400px;
+  width: 100%;
+  height: 350px;
 }
 
 img {
   object-fit: contain;
-  width: 100%;
+  width: 200%;
 }
 
 picture img {
   position: absolute;
   left: 0;
-  top: 50%;
-  transform: translate(00%, -50%);
+  top: 0;
+  /* transform: translate(10%, 0%); */
 }
 
 .main-section {
@@ -219,6 +286,7 @@ h1 {
   color: var(--clr-neutral-very-dark-blue);
   font-weight: var(--font-weight-bold);
   text-transform: uppercase;
+  line-height: 1.1;
 }
 
 .black-span {
@@ -243,9 +311,22 @@ h1 {
   font-size: var(--font-size-button);
   border: none;
   border-radius: var(--size-200);
-  padding: var(--size-100) var(--size-300);
+  padding: var(--size-300) var(--size-500);
   text-transform: uppercase;
   font-weight: var(--font-weight-bold);
+  white-space: nowrap;
+}
+
+.accent:hover,
+.accent:focus-visible {
+  opacity: 0.7;
+}
+
+.box {
+  background-color: var(--clr-neutral-grayish-blue);
+  width: var(--size-300);
+  height: var(--size-300);
+  border-radius: 1000px;
 }
 
 /* https://codepen.io/sosuke/pen/Pjoqqp */
@@ -257,14 +338,39 @@ h1 {
 } */
 
 /* Media queries */
-@media (min-width: 50em) {
+@media (min-width: 40em) {
   .desktop {
     display: block;
   }
   .mobile {
     display: none;
   }
+  header {
+    padding: var(--size-800) var(--size-1000);
+  }
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: var(--size-600);
+    align-items: center;
+  }
   main {
-    flex-direction: row-reverse;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+  }
+  picture {
+    order: 1;
+  }
+  .main-section {
+    order: -1;
+    padding: 0 var(--size-1000);
+    gap: var(--size-600);
+  }
+  .box {
+    background-color: var(--clr-neutral-grayish-blue);
+    width: var(--size-300);
+    height: var(--size-300);
+    border-radius: 1000px;
   }
 }

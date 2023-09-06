@@ -5,8 +5,9 @@ import Menu from "./components/Menu";
 function App() {
   return (
     <>
-      <Menu></Menu>
       <main>
+        <div className="shadow"></div>
+        <Menu></Menu>
         <picture>
           <img src={illustration} alt="" />
         </picture>
@@ -19,7 +20,7 @@ function App() {
           <p>Project planning and time tracking for agile teams</p>
           <div className="flex-row">
             <button className="accent">Schedule a demo</button>
-            <span className="uppercase">to see a live preview</span>
+            <span className="uppercase">to see a preview</span>
           </div>
         </section>
       </main>

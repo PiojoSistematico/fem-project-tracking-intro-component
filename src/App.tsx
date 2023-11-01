@@ -1,4 +1,3 @@
-import logo from "./assets/images/logo.svg";
 import illustration from "./assets/images/illustration-devices.svg";
 import Menu from "./components/Menu";
 
